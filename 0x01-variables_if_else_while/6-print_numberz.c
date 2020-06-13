@@ -1,17 +1,16 @@
 #include <stdio.h>
 /**
-   * main - Alphabet
+   * main - Print numbers base 10
     *
      * Return: Always 0 (Success)
       */
 int main(void)
 {
-	char a = 'a';
+	int num = 0;
 
-	while (a <= 'z')
+	for (num = 0; num <= 9; num++)
 	{
-		putchar(a);
-		a++;
+		putchar(num + 48);
 	}
 	putchar('\n');
 	return (0);

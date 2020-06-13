@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
-   * main - Alphabet
+   * main - Alphabet except "e" and "q"
     *
      * Return: Always 0 (Success)
       */
@@ -8,10 +8,12 @@ int main(void)
 {
 	char a = 'a';
 
-	while (a <= 'z')
+	for (a = 'a'; a <= 'z'; a++)
 	{
-		putchar(a);
-		a++;
+		if (a != 'q' && a != 'e')
+		{
+			putchar(a);
+		}
 	}
 	putchar('\n');
 	return (0);
