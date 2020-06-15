@@ -5,18 +5,17 @@
      * Return: Always 0 (Success)
       */
 int main(void)
-{
-	int num;
 
-	while (num <= 9)
+{
+	int h;
+
+	for (h = 0; h <= 9; h++)
 	{
-		putchar(num + 48);
-		num++;
-		if (num <= 9)
-		{
-		putchar(',');
-		putchar(' ');
-		}
+		putchar(h + 48);
+	}
+	for (h = 'a'; h <= 'f'; h++)
+	{
+		putchar(h);
 	}
 	putchar('\n');
 	return (0);
