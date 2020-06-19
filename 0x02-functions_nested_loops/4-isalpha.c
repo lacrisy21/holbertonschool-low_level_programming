@@ -1,8 +1,10 @@
 #include"holberton.h"
 /**
- * Isalpha function to check for alpha char
+ * _isalpha -  function to check for alpha char
  *
- * Return 1 if true, 0 if false
+ * @c: Value of input
+ *
+ * Return: 1 or 0
  */
 
 int _isalpha(int c)

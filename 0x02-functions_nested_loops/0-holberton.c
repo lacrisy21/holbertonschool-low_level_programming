@@ -1,7 +1,6 @@
 #include "holberton.h"
 /**
- *_putchar - print data
- *@c: character to print
+ * main - entry point
  *
  *Return: On success 0
  */
