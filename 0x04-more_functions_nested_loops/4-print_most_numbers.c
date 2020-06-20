@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
- * print_most_numbers: print numbers with exceptions
+ * print_most_numbers - used to print numbers with exceptions
  *
- * Return:
+ * Return:void
  */
 void print_most_numbers(void)
 {
