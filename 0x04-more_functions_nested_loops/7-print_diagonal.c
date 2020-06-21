@@ -5,9 +5,10 @@
  * @n: value for number of times to print
  * Return: void
  */
-void print_diagonal(int n) 
+void print_diagonal(int n)
 {
-	int a, b;
+	int a;
+	int b;
 
 	if (n > 0)
 	{
@@ -19,5 +20,6 @@ void print_diagonal(int n)
 			_putchar('\n');
 		}
 	}
-	_putchar('\n');
+	else
+		_putchar('\n');
 }
