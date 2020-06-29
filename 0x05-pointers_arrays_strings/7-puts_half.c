@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _puts - Prints a string
+ * puts_half - Prints half of a string
  * @str:  variable string.
  * Return: Void.
  */
@@ -11,10 +11,12 @@ void puts_half(char *str)
 	int len;
 	int n;
 
-	for (len = 0; str[len] != '\0'; len++);
+	for (len = 0; str[len] != '\0'; len++)
+	{
+	}
 	if (len % 2 == 0)
 		n = len / 2;
-	else 
+	else
 		n = (len - 1) / 2;
 
 	for ( ; str[n] != '\0'; n++)
