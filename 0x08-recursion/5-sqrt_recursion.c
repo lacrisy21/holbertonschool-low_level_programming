@@ -26,4 +26,3 @@ int _sqrt_recursion(int n)
 {
 	return (aux(1, n));
 }
- 
