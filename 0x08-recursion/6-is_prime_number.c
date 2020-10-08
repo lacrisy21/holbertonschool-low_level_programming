@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
-* is_prime_number - check a number is a prime or not
+* isprimenumber - check a number is a prime or not
 * @i: given number
 * @j: number
-* return: prime number
+* Return: prime number
 */
 int isprimenumber(int i, int j)
 {
@@ -24,7 +24,7 @@ int isprimenumber(int i, int j)
 /**
  * is_prime_number - returns 1 if the input integer is a prime number
  * @n: given number
- * Return: 1 if prime , 0 if not
+ * Return: 1 if prime, 0 otherwise
  */
 
 int is_prime_number(int n)
