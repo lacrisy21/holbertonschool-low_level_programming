@@ -1,48 +1,64 @@
 #include "holberton.h"
-#include <stdlib.h>
 /**
- * *str_concat - function to concatenate two strings
- * @s1: string 1
- * @s2: string 2
- * Return: New array
- */
+ * str_concat - concatenates two strings
+ * @s1: first string
+ * @s2: second string
+ * Return: pointer to the concatenated string.
+*/
 char *str_concat(char *s1, char *s2)
 {
-	char *p;
-	unsigned int a = 0;
-	unsigned int len1, len2, len3;
+	int len1, len2, i, j;
+	char *new_string;
 
-	if (s1 == '\0')
+	if (s1 == NULL)
+	{
 		s1 = "";
-	if (s2 == '\0')
+	}
+	if (s2 == NULL)
+	{
 		s2 = "";
+	}
+
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
-	len3 = len1 + len2;
-	p = malloc((len3 + 1) * sizeof(char));
-	if (p == '\0')
-		return (0);
-	for ( ; a < len1; a++)
-		p[a] = s1[a];
-	for ( ; a < len3; a++)
-		p[a] = s2[a - len1];
-	p[len3] = '\0';
-	return (p);
+	i = 0;
+	j = 0;
+
+	new_string = malloc(sizeof(char) * (len1 + len2 + 1));
+
+	if (new_string == NULL)
+		return (NULL);
+
+	while (s1[i] != '\0')
+	{
+		new_string[i] = s1[i];
+		i++;
+	}
+	while (s2[j] != '\0')
+	{
+		new_string[i + j] = s2[j];
+		j++;
+	}
+
+	new_string[i + j] = '\0';
+	return (new_string);
 }
 /**
- * _strlen - calculate the length of the string
- * @s: address of that variable
- * Return: return the length of a string
- */
-int _strlen(char *s)
+ * _strlen - calculates length of the string
+ * @str: pointer to string
+ * Return: integer number of the size
+*/
+int _strlen(char *str)
 {
-	int length;
+	int i = 0;
 
-	length = 0;
-	while (*s != '\0')
+	if (!str)
+		return (0);
+
+	while (str[i])
 	{
-		length++;
-		s++;
+		i++;
 	}
-	return (length);
+
+	return (i);
 }
