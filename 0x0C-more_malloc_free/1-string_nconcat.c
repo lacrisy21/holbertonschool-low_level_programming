@@ -1,59 +1,53 @@
 #include "holberton.h"
-/**
- * sizes - determines sizes of strings and turns to empty string
- * @a: string
- * Return: string size
-*/
-int sizes(char *a)
-{
-	unsigned int i = 0;
+#include <stdlib.h>
 
-	while (a[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+/**
+*string_nconcat - concatenates two strings
+*@s1: string
+*@s2: string
+*@n: variable
+*Return: pointer to allocated
+*/
+
+char *string_nconcat(char *s1, char *s2, unsigned int n)
+{
+	char *p;
+	unsigned int a, len1, len2;
+
+	if (s1 == '\0')
+		s1 = "";
+	if (s2 == '\0')
+		s2 = "";
+
+	len1 = _strlen(s1);
+		len2 = _strlen(s2);
+		if (n >= len2)
+			n = len2;
+
+	p = malloc(sizeof(char) * (len1 + n + 1));
+	if (p == '\0')
+		return (0);
+
+	for (a = 0; a < len1; a++)
+		p[a] = s1[a];
+	for (; a < len1 + n; a++)
+		p[a] = s2[a - len1];
+	p[len1 + n] = '\0';
+
+	return (p);
 }
 
 /**
- * *string_nconcat - concatenates two strings
- * @s1: string 1
- * @s2: string 2
- * @n: memory size
- * Return: pointer
+* _strlen - size of len
+* @s: pointer
+* Return: a
 */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+
+int _strlen(char *s)
 {
-	unsigned int bs1, bs2, bytes, i, j;
-	char *p;
+	int a = 0;
 
-	i = 0;
-
-	if (!s1)
-		s1 = "";
-	if (!s2)
-		s2 = "";
-	bs1 = sizes(s1);
-	bs2 = sizes(s2);
-
-	if (n >= bs2)
-		n = bs2;
-
-	bytes = (bs1 + n + 1);
-	p = malloc(bytes * sizeof(char));
-	if (!p)
-		return (NULL);
-	while (i < bs1)
-	{
-		p[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (j < n)
-	{
-		p[j + i] = s2[j];
-		j++;
-	}
-	p[j + i] = '\0';
-	return (p);
+	for ( ; *s; a++)
+		s++;
+	return (a);
 }
