@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * get_endianness - check the endianness
- * Return: 1 little-endian, 0 big-endian. 
+ * Return: 1 little-endian, 0 big-endian
  */
 int get_endianness(void)
 {
